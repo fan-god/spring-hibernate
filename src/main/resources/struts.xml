@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <!--ajax与struts2的交互-->
+    <package name="game" namespace="/" extends="struts-default,json-default">
+        <action name="showAllGameByFirstWord" class="com.kgc.controller.GameAction" method="getGameByFirstWord">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="getGameNameByIsHot" class="com.kgc.controller.GameAction" method="getGameNameByIsHot">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="listAll" class="com.kgc.controller.GameAction" method="execute">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="listByType" class="com.kgc.controller.GameAction" method="listByType">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+        <action name="listAllQuByGameName" class="com.kgc.controller.GameAction" method="listAllQuByGameName">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
+    </package>
+
+    <package name="json" namespace="/json" extends="json-default">
+        <action name="showJson" class="com.kgc.controller.StudentActionJson">
+            <result name="success" type="json">
+                <!--root表示返回json的根-->
+                <param name="root">student</param>
+            </result>
+        </action>
+    </package>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <!--文件上传-->
+        <action name="upload" class="com.kgc.controller.FileUploadAction">
+            <result name="success">/uploadSuccess.jsp</result>
+            <result name="error">/uploadError.jsp</result>
+        </action>
+    </package>
+
+
+    <!--在线客服功能-->
+    <package name="chat" extends="struts-default,json-default">
+        <!-- 用户发送消息  -->
+        <action name="chatMessageSend" class="com.shop.chat.MessageAction" method="send">
+            <result name="success" type="json"></result>
+        </action>
+
+        <!-- 用户接受消息  -->
+        <action name="chatMessageGet" class="com.shop.chat.MessageAction">
+            <result type="json"></result>
+        </action>
+
+        <!-- 管理员获取消息  -->
+        <action name="adminMessageGet" class="com.shop.chat.AdminMessageAction">
+            <result name="success" type="json"></result>
+        </action>
+
+        <!-- 管理员发送消息到用户  -->
+        <action name="adminMessageSend" class="com.shop.chat.AdminMessageAction" method="send">
+            <result type="json"></result>
+        </action>
+
+        <!-- 管理员列表  -->
+        <action name="adminList" class="com.shop.chat.AdminListAction">
+            <result type="json"></result>
+        </action>
+
+    </package>
+</struts>

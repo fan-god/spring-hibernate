@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <util:properties location="classpath:mysql.properties" id="mysql"/>
+
+    <!--配置数据源-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="#{mysql.driver}"/>
+        <property name="url" value="#{mysql.url}"/>
+        <property name="username" value="#{mysql.username}"/>
+        <property name="password" value="#{mysql.password}"/>
+    </bean>
+
+    <!--配置会话工厂-->
+    <bean class="org.springframework.orm.hibernate4.LocalSessionFactoryBean" id="sessionFactory">
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="show_sql">true</prop>
+                <prop key="format_sql">true</prop>
+            </props>
+        </property>
+        <property name="mappingLocations">
+            <list>
+                <value>classpath:com/kgc/entity/*.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--模板类-->
+    <bean class="org.springframework.orm.hibernate4.HibernateTemplate" id="hibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
+    <!--托盘事物管理-->
+    <bean class="org.springframework.orm.hibernate4.HibernateTransactionManager" id="transactionManager">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <!--aop配置事物拦截-->
+    <tx:advice transaction-manager="transactionManager" id="transactionInterceptor">
+        <tx:attributes>
+            <tx:method name="*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+    <aop:config>
+        <aop:pointcut id="tran" expression="execution(* com.kgc.service..*.*(..))"/>
+        <aop:advisor advice-ref="transactionInterceptor" pointcut-ref="tran"/>
+    </aop:config>
+<!--基类-->
+    <bean class="com.kgc.dao.impl.BaseDao" id="baseDao" autowire="byName"/>
+    <bean class="com.kgc.service.impl.BaseService" id="baseService" autowire="byName"/>
+<!--游戏表-->
+    <bean class="com.kgc.dao.impl.AllGamesDao" id="allGamesDao" autowire="byName"/>
+    <bean class="com.kgc.service.impl.AllGamesService" id="allGamesService" autowire="byName"/>
+<!--区表-->
+    <bean class="com.kgc.dao.impl.AllQuDao" id="allQuDao" autowire="byName"/>
+    <bean class="com.kgc.service.impl.AllQuService" id="allQuService" autowire="byName"/>
+</beans>

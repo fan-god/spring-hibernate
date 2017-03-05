@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.kgc.entity.Allgames" table="allgames" schema="5173game">
+        <id name="id">
+            <column name="id" sql-type="int(10)"/>
+        </id>
+        <property name="cname">
+            <column name="cname" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="initial">
+            <column name="initial" sql-type="varchar(2)" length="2" not-null="true"/>
+        </property>
+        <property name="isHot">
+            <column name="isHot" sql-type="varchar(2)" length="2" not-null="true"/>
+        </property>
+        <property name="type">
+            <column name="type" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="onOff">
+            <column name="onOff" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
