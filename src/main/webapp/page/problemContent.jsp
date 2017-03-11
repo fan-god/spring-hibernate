@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%--
   Created by IntelliJ IDEA.
   User: 王帆
@@ -47,7 +48,7 @@
                 <li>感谢您对5173的关注与支持，预祝您有一个愉快的5173之旅！<a href="http://www.5173.com">http://www.5173.com</a></li>
                 <li class="keHuPic">
                     <div><img src="../pic/${problem.mangerPic}" height="147" width="147"></div>
-                    <div>${problem.mangerPic}</div>
+                    <div>${fn:substring(problem.mangerPic,0,7)}</div>
                     <div>${problem.mangerName}</div>
                 </li>
             </ul>
