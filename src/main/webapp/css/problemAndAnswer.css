@@ -1,0 +1,19 @@
+*{list-style: none;margin: 0;padding: 0;}
+td {text-align:center}
+html{overflow: scroll;}
+.all-controller{border: 1px solid black;width: 1000px;margin: 0 auto;}
+.top-pic li{float: left;margin:0 19px 20px; }
+.navigation{width: 1000px;clear: both;}
+.navigation dd{width:331px;background: gainsboro;float: left;border: 1px solid darkgray;font:bold 25px '宋体';text-align: center;padding: 20px 0;}
+.navigation dd:hover{cursor: pointer;}
+.problemType li{border: 1px solid gainsboro;width: 188px;float: left;padding: 10px 0;margin: 10px 5px 0 5px;text-align: center;color: grey;}
+.problemType{clear: both;}
+.problemType li span{color: crimson;}
+.center-bar{width: 1000px;border-bottom: 1px solid #B8E834;clear: both;margin: 180px 0 20px;height: 44px;}
+.center-bar dd{float: left;width: 200px;padding: 10px 0;text-align: center;color: grey;font:bold 20px "宋体";background: gainsboro;margin: 0 10px 0 0;}
+.problemTable{width: 1000px;height: 40px;background: rgba(65, 255, 253, 0.15);color: grey;}
+.problemTable div{float: left;margin:10px 140px 0 180px;}
+#state{margin: 10px 60px;}
+.problemTable li{float: left;margin: 10px 40px;}
+.problemContent{width:360px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align: left;}
+.jump li{float: left;margin: 10px 30px;}

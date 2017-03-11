@@ -1,0 +1,16 @@
+*{list-style: none;color: grey;font-size: 16px;}
+html{overflow: scroll;}
+a{text-decoration: none;color: blue;}
+.all-controller{width: 1000px;margin: 0 auto;height: 1000px;}
+.top, .center{border: 1px solid gainsboro;}
+.top h1,.Customer {background: rgba(207, 220, 203, 0.15);padding: 10px 20px;color: black;}
+.top div{margin: 20px 20px;}
+.line{width: 950px;margin: 0 auto;}
+.content{margin: 0 20px;}
+.center{margin: 30px 0;}
+.answerContent{position: relative;}
+.answerContent li{margin: 30px auto;line-height: 35px;width: 600px;}
+.title{margin: 30px auto;width: 700px;}
+.answerContent li div span{color: brown;}
+.keHuPic{position: absolute;top:0;left: -227px;}
+.keHuPic div{text-align: center;color: blue;font:bold 20px "宋体";}
