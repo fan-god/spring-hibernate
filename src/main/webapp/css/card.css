@@ -1,0 +1,29 @@
+a{text-decoration: none}
+ul,li {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.Card_all{
+    width: 500px;
+    height: 390px;
+
+}
+
+.goods_list{
+     width: 500px;
+     z-index: 1;
+     font-size: 12px;
+     padding-right: 20px;
+     padding-top: 10px;
+     margin-top: 500px;
+     margin-left: 150px;
+     position: absolute;
+     top: 45px;
+     left: 200px;
+     float: left;
+ }
+.goods_list li{
+    float: left;
+    margin-left: 50px;
+}

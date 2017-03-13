@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.kgc.entity.Card" table="card" schema="5173game">
+        <id name="id">
+            <column name="id" sql-type="int(10)"/>
+        </id>
+        <property name="pic">
+            <column name="pic" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="pname">
+            <column name="pname" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="price">
+            <column name="price" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="strtus">
+            <column name="strtus" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

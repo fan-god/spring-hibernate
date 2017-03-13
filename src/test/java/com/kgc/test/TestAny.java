@@ -1,11 +1,10 @@
 package com.kgc.test;
 
 import com.kgc.entity.Allgames;
+import com.kgc.entity.Card;
 import com.kgc.entity.Problem;
-import com.kgc.service.IAllGamesService;
-import com.kgc.service.IAllQuService;
-import com.kgc.service.IAllServerService;
-import com.kgc.service.IProblemService;
+import com.kgc.service.*;
+import com.kgc.service.impl.cardService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +28,13 @@ public class TestAny {
     private IAllServerService allServerService;
     @Autowired
     private IProblemService problemService;
+
+    @Autowired
+    private ICardService cardService;
+
+    public void setCardService(ICardService cardService) {
+        this.cardService = cardService;
+    }
 
     public void setAllServerService(IAllServerService allServerService) {
         this.allServerService = allServerService;
@@ -102,6 +108,24 @@ public class TestAny {
         List<Problem> problems = problemService.limitProblem(8, 3);
         for (Problem problem:problems) {
             System.out.println(problem.getId()+"-----"+problem.getQuestion());
+        }
+    }
+    @Test
+    public void test10(){
+        List<Long> i=cardService.cardCount();
+        List<Card> cardList=cardService.limitProblem(3,2);
+        for (Card card:cardList) {
+            System.out.println(card.getId()+"--"+card.getPname());
+        }
+    }
+
+    //读取数据表card
+    @Test
+    public void test8(){
+        List<Card> cardList= cardService.listAll(Card.class);
+        System.out.println(cardList.toString());
+        for (Card card:cardList) {
+            System.out.println(card.getId());
         }
     }
 

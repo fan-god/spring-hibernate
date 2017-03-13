@@ -1,4 +1,6 @@
 <%@ taglib prefix="s" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: 王帆
@@ -17,6 +19,7 @@
     <title>首页</title>
 </head>
 <link rel="stylesheet" href="../css/home.css">
+<link rel="stylesheet" href="../css/card.css">
 <script type="text/javascript" src="../js/jquery-1.7.2.min.js"></script>
 <script type="text/javascript" src="../js/home.js"></script>
 <body>
@@ -46,7 +49,43 @@
                     <li></li>
                 </ul>
             </div>
+
+            <%--点卡区--%>
+            <span style="font-size: 30px;font-weight: bold">5173点卡</span>
+            <div class="Card_all">
+                <div>
+                    <img src="../image/card_left.png"/>
+                </div>
+                <div class="inner_tab_box " id="cardInnerTab1" >
+                    <ul class="goods_list">
+                        <c:forEach items="${requestScope.cardList}" var="card">
+                            <li>
+                                <p class="img_box"><a  href="" onclick=""><img width="110" height="70" src="../pic/${card.pic}" ></a></p>
+                                <p><a title="永恒之塔100元"  href="" onclick="">${card.pname}</a></p>
+                                <p><span class="price">￥<b>${card.price}</b></span></p>
+                                <p><a class="buy_btn" href="" onclick="">立即购买</a></p>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </div>
+            </div>
+            <ul class="lunbo">
+                <li>共${requestScope.iList[0]}条记录&nbsp;&nbsp;${requestScope.pageIndex}/${requestScope.totalPages}页</li>
+                <li>
+                     <c:if test="${requestScope.pageIndex>1}">
+                        <a href="<%=basePath%>home/card?pageIndex=1">首页</a>
+                        <a href="<%=basePath%>home/card?pageIndex=${requestScope.pageIndex-1}">上一页</a>
+                     </c:if>
+                     <c:if test="${requestScope.pageIndex<requestScope.totalPages}">
+                        <a href="<%=basePath%>home/card?pageIndex=${requestScope.pageIndex+1}">下一页</a>
+                        <a href="<%=basePath%>home/card?pageIndex=${requestScope.totalPages}">最后一页</a>
+                     </c:if>
+                </li>
+            </ul>
+
         </div>
+
+
         <!------------------------------------------------右边上部--------------------------------------------------------------->
         <div class="book_new123">
             <div class="buy"><a href="#"> <img src="../image/woyaomai1.png" height="38" width="135"></a></div>
@@ -110,14 +149,14 @@
                 <div class="zx-jy-ts"><strong>咨询/建议/投诉</strong></div>
                 <div class="more"><a href="<%=basePath%>home/problemAndAnswer" target="_blank">更多</a></div>
                 <marquee direction="up" scrolldelay="0" onmouseover="this.stop();" onmouseout="this.start()">
-                    <ul class="answer">
-                        <s:forEach items="${requestScope.proList}" var="problem">
-                            <s:if test="${problem.state=='已解决'}">
-                                <li><img src="../image/？.png" class="questions"><a href="<%=basePath%>home/goProblemContent?question=${problem.question}">${problem.question}</a></li>
-                                <li><img src="../image/a.png"><a href="<%=basePath%>home/goProblemContent?question=${problem.question}">${problem.answer}</a></li>
-                                <li><hr/></li>
-                            </s:if>
-                        </s:forEach>
+                            <ul class="answer">
+                                <s:forEach items="${requestScope.proList}" var="problem">
+                                    <s:if test="${problem.state=='已解决'}">
+                                        <li><img src="../image/？.png" class="questions"><a href="<%=basePath%>home/goProblemContent?question=${problem.question}">${problem.question}</a></li>
+                                        <li><img src="../image/a.png"><a href="<%=basePath%>home/goProblemContent?question=${problem.question}">${problem.answer}</a></li>
+                                        <li><hr/></li>
+                                    </s:if>
+                                </s:forEach>
                     </ul>
                 </marquee>
             </div>

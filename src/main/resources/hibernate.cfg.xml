@@ -10,6 +10,7 @@
       <mapping resource="com/kgc/entity/Allgames.hbm.xml"/>
       <mapping resource="com/kgc/entity/Allserver.hbm.xml"/>
       <mapping resource="com/kgc/entity/Problem.hbm.xml"/>
+      <mapping resource="com/kgc/entity/Card.hbm.xml"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 
