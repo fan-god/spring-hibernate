@@ -5,7 +5,7 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <!--ajax与struts2的交互-->
+    <!--ajax与struts2的交互,头部模块-->
     <package name="game" namespace="/" extends="struts-default,json-default">
         <action name="showAllGameByFirstWord" class="com.kgc.controller.GameAction" method="getGameByFirstWord">
             <result name="success" type="json">
@@ -32,7 +32,14 @@
                 <param name="root">result</param>
             </result>
         </action>
+        <action name="getServerByQu" class="com.kgc.controller.GameAction" method="getServerByQu">
+            <result name="success" type="json">
+                <param name="root">result</param>
+            </result>
+        </action>
     </package>
+
+
 
     <package name="json" namespace="/json" extends="json-default">
         <action name="showJson" class="com.kgc.controller.StudentActionJson">
@@ -51,33 +58,16 @@
         </action>
     </package>
 
-
-    <!--在线客服功能-->
-    <package name="chat" extends="struts-default,json-default">
-        <!-- 用户发送消息  -->
-        <action name="chatMessageSend" class="com.shop.chat.MessageAction" method="send">
-            <result name="success" type="json"></result>
+    <!--**************************咨询与解答模块******************************-->
+    <package name="home" extends="struts-default">
+        <action name="problem" class="com.kgc.controller.ProblemAction">
+            <result name="success">/page/home.jsp</result>
         </action>
-
-        <!-- 用户接受消息  -->
-        <action name="chatMessageGet" class="com.shop.chat.MessageAction">
-            <result type="json"></result>
+        <action name="problemAndAnswer" class="com.kgc.controller.ProblemAction" method="toProblemAndAnswer">
+            <result name="success">/page/problemAndAnswer.jsp</result>
         </action>
-
-        <!-- 管理员获取消息  -->
-        <action name="adminMessageGet" class="com.shop.chat.AdminMessageAction">
-            <result name="success" type="json"></result>
+        <action name="goProblemContent" class="com.kgc.controller.ProblemAction" method="goProblemContent">
+            <result name="success">/page/problemContent.jsp</result>
         </action>
-
-        <!-- 管理员发送消息到用户  -->
-        <action name="adminMessageSend" class="com.shop.chat.AdminMessageAction" method="send">
-            <result type="json"></result>
-        </action>
-
-        <!-- 管理员列表  -->
-        <action name="adminList" class="com.shop.chat.AdminListAction">
-            <result type="json"></result>
-        </action>
-
     </package>
 </struts>

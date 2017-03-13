@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.kgc.entity.Problem" table="problem" schema="5173game">
+        <id name="id">
+            <column name="id" sql-type="int(10)"/>
+        </id>
+        <property name="question">
+            <column name="question" sql-type="varchar(1000)" length="1000" not-null="true"/>
+        </property>
+        <property name="state">
+            <column name="state" sql-type="varchar(10)" length="10" not-null="true"/>
+        </property>
+        <property name="qType">
+            <column name="qType" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="qTime">
+            <column name="qTime" sql-type="date" not-null="true"/>
+        </property>
+        <property name="answerTime">
+            <column name="answerTime" sql-type="varchar(20)" length="20" not-null="true"/>
+        </property>
+        <property name="mangerPic">
+            <column name="mangerPic" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="mangerName">
+            <column name="mangerName" sql-type="varchar(5)" length="5" not-null="true"/>
+        </property>
+        <property name="answer">
+            <column name="answer" sql-type="text" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

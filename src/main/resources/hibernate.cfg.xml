@@ -8,6 +8,8 @@
     <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
       <mapping resource="com/kgc/entity/Allqu.hbm.xml"/>
       <mapping resource="com/kgc/entity/Allgames.hbm.xml"/>
+      <mapping resource="com/kgc/entity/Allserver.hbm.xml"/>
+      <mapping resource="com/kgc/entity/Problem.hbm.xml"/>
       <!-- <property name="connection.username"/> -->
     <!-- <property name="connection.password"/> -->
 

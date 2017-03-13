@@ -3,6 +3,7 @@ package com.kgc.controller;
 import com.kgc.entity.Allgames;
 import com.kgc.service.IAllGamesService;
 import com.kgc.service.IAllQuService;
+import com.kgc.service.IAllServerService;
 import com.opensymphony.xwork2.ActionSupport;
 import net.sf.json.JSONArray;
 import org.apache.struts2.ServletActionContext;
@@ -21,18 +22,16 @@ public class GameAction extends ActionSupport {
     private IAllGamesService allGamesService;
     @Autowired
     private IAllQuService allQuService;
+    @Autowired
+    private IAllServerService allServerService;
+    //响应给ajax的结果
     private String result;
+    private List<String> list = new ArrayList<String>();
     private HttpServletRequest request;
-
-    public IAllQuService getAllQuService() {
-        return allQuService;
-    }
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void setAllQuService(IAllQuService allQuService) {
         this.allQuService = allQuService;
     }
-
-    private List<String> list = new ArrayList<String>();
     public String getResult() {
         return result;
     }
@@ -45,6 +44,11 @@ public class GameAction extends ActionSupport {
         this.allGamesService = allGamesService;
     }
 
+    public void setAllServerService(IAllServerService allServerService) {
+        this.allServerService = allServerService;
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public String execute() throws Exception {
         request = ServletActionContext.getRequest();
@@ -95,6 +99,15 @@ public class GameAction extends ActionSupport {
         List<String> quList = allQuService.listAllQuByGameName(request.getParameter("value"));
         System.out.println(quList.toString());
         JSONArray jsonArray = JSONArray.fromObject(quList);
+        result = jsonArray.toString();
+        return SUCCESS;
+    }
+
+    public String getServerByQu() throws IOException {
+        request = ServletActionContext.getRequest();
+        List<String> serverList = allServerService.getServerByQu(request.getParameter("value"));
+        System.out.println("服务器"+serverList.toString());
+        JSONArray jsonArray = JSONArray.fromObject(serverList);
         result = jsonArray.toString();
         return SUCCESS;
     }

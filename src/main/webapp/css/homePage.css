@@ -3,7 +3,7 @@
 *{ margin:0; padding:0;list-style:none }
 body{ width:100%; height:100%; margin: 0 auto;}
 .head{ width:960px; height:190px; margin:0 auto;}
-a{ text-decoration:none; color:#000; }
+a{ text-decoration:none;}
 a:hover{ text-decoration:underline; color:#F00;}
 /*广告*/
 #poster a{ position:fixed; margin:100px 150px 0 1000px; background:url(../image/119.png) 0 0 no-repeat; width:110px; height:161px;display:block;}

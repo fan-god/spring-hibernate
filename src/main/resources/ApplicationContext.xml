@@ -63,4 +63,10 @@
 <!--区表-->
     <bean class="com.kgc.dao.impl.AllQuDao" id="allQuDao" autowire="byName"/>
     <bean class="com.kgc.service.impl.AllQuService" id="allQuService" autowire="byName"/>
+<!--服务器表-->
+    <bean class="com.kgc.dao.impl.AllServerDao" id="allServerDao" autowire="byName"/>
+    <bean class="com.kgc.service.impl.AllServerService" id="allServerService" autowire="byName"/>
+<!--提问表-->
+    <bean class="com.kgc.dao.impl.ProblemDao" id="problemDao" autowire="byName"/>
+    <bean class="com.kgc.service.impl.ProblemService" id="problemService" autowire="byName"/>
 </beans>

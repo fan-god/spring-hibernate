@@ -1,0 +1,102 @@
+form dl dd{float: left;margin: 5px 5px;}
+form dl dd input{margin:5px 0;color: grey;border: none;}
+#dForReach1{background: blue;color: white;height: 23px;width: 80px;position: absolute;text-align: center;border-radius:5px;top: 30px;left: 370px}
+#dForReach2{background: white;color: blue;height: 23px;width: 80px;position: absolute;border-radius:5px;text-align: center;top: 30px;left: 450px}
+#reach2{border: 5px solid blue;width: 609px;height:49px;display: none;color: grey;position: absolute;left: 300px;}
+#showGameName,#showQuName,#showServerName,#showLast
+{display: none;position: absolute;border: 3px solid blue;width: 1000px;top:60px;left: -315px;}
+html{overflow: scroll;}
+#showGameName:before, #showGameName:after,
+#showQuName:before,#showQuName:after,
+#showServerName:before,#showServerName:after,
+#showLast:before,#showLast:after
+{
+    width:0;
+    height:0;
+    border:transparent solid;
+    position:absolute;
+    content:"" ;
+}
+
+#showGameName:before {
+    border-width: 15px;
+    border-bottom-color: blue;
+    left: 340px;
+    top: -30px;
+}
+
+#showGameName:after {
+    border-width: 12px;
+    border-bottom-color: white;
+    top: -22px;
+    left: 343px;
+}
+
+#showQuName:before {
+    border-width: 15px;
+    border-bottom-color: blue;
+    left: 430px;
+    top: -30px;
+}
+
+#showQuName:after {
+    border-width: 12px;
+    border-bottom-color: white;
+    top: -22px;
+    left: 433px;
+}
+
+#showServerName:before {
+    border-width: 15px;
+    border-bottom-color: blue;
+    left: 530px;
+    top: -30px;
+}
+
+#showServerName:after {
+    border-width: 12px;
+    border-bottom-color: white;
+    top: -22px;
+    left: 533px;
+}
+
+#showLast:before {
+    border-width: 15px;
+    border-bottom-color: blue;
+    left: 640px;
+    top: -30px;
+}
+
+#showLast:after {
+    border-width: 12px;
+    border-bottom-color: white;
+    top: -22px;
+    left: 643px;
+}
+#showGameName{z-index: 1;background: white;}
+#showQuName{z-index: 1;background: white;}
+#showLast{z-index: 1;background: white;}
+#showGameName ul li div{float: left;color: grey;font:bold 18px "宋体";margin: 10px 0.6px;width: 32px;height: 35px;text-align: center;background: rgba(87, 220, 201, 0.11);}
+.reMen{float: left;color: grey;font:bold 18px "宋体";margin: 10px 0.6px;height: 35px;border:none;text-align: center;background: rgba(87, 220, 201, 0.11);}
+#showGameName ul li div:hover{color: blue;border-bottom: solid ;cursor: pointer;}
+.eMen:hover{color: white;border-bottom: solid ;cursor: pointer;background: #20a3bf;font-weight: bold;}
+
+.gameType dd{float: left;width: 140px;
+    background: rgba(44, 126, 128, 0.06);text-align: center;
+    font-size: 18px;color: grey;padding: 10px 0;
+}
+.gameType dd:hover{cursor: pointer;background: white;}
+
+.gameTypeDiv{clear: both}
+.close{float: right;}
+.close:hover{cursor: pointer;}
+.showGameInfo ul li{margin: 15px 15px 15px;float: left;text-align: left;width: 170px;}
+.showGameInfo ul li:hover{color: white;cursor:pointer;background: #20a3bf;font-weight: bold;}
+.showQu ul li:hover{color: white;cursor:pointer;background: #20a3bf;font-weight: bold;}
+.showQu ul li{float: left;margin: 15px 15px 15px;}
+.showQu{width: 950px;}
+#showLast ul li{margin: 15px 15px 15px;float: left;text-align: left;}
+#showLast ul li:hover{color: white;cursor:pointer;background: #20a3bf;font-weight: bold;}
+.showServer ul li{margin: 10px 0;}
+.showServer ul li:hover{cursor: pointer;}
+#showServerName{z-index: 1;background: white;}
