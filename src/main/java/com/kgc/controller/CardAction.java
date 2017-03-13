@@ -52,7 +52,6 @@ public class CardAction extends ActionSupport {
     public String execute() throws Exception {
         List<Problem> problems = problemService.listAll(Problem.class);
         request.put("proList", problems);
-//        //dianka
 //        System.out.println("进入这个方法");
 //        List<Card> cards = cardService.listAll(Card.class);
 //        HttpServletRequest request = ServletActionContext.getRequest();

@@ -13,7 +13,7 @@ import java.util.List;
 public interface ICardService extends IBaseService<Card,Serializable> {
 //    public PageBean queryForPage(int pageSize, int currentPage);
 
-
+//
 
     public List<Long> cardCount();
 

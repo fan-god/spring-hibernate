@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-
+<!---->
     <class name="com.kgc.entity.Card" table="card" schema="5173game">
         <id name="id">
             <column name="id" sql-type="int(10)"/>

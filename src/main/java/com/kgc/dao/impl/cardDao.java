@@ -64,3 +64,4 @@ public class cardDao extends BaseDao<Card,Serializable> implements IcardDao {
 //        return Integer.parseInt(q.list().get(0).toString());
 //    }
 }
+//

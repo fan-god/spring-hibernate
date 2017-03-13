@@ -10,7 +10,7 @@ import java.util.List;
  * Created by 陈心航 on 2017/3/6.
  */
 public interface IcardDao extends IBaseDao<Card,Serializable> {
-//    //分页查询
+    //分页查询
 //     List<Card> queryForPage(String hql, int offset, int length);
 //    //总记录条数
 //     int getCount(String hql);

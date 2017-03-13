@@ -33,7 +33,7 @@ public class cardService extends BaseService<Card,Serializable> implements ICard
     public List<Card> limitProblem(int pageSize, int page) {
         return cardDao.limitProblem(pageSize,page);
     }
-
+//
     public int getTotalPages(int count, int pageSize) {
         return cardDao.getTotalPages(count,pageSize);
     }
