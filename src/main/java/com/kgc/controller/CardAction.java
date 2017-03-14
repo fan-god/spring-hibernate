@@ -17,11 +17,11 @@ import java.util.Map;
  * Created by 陈心航 on 2017/3/7.
  */
 public class CardAction extends ActionSupport {
-    @Autowired
-    private IProblemService problemService;
     private Card card;
     @Autowired
     private ICardService cardService;
+    @Autowired
+    private IProblemService problemService;
     private  int pageIndex;
     private Map<String, Object> request;
     private Map<String, Integer> request2;

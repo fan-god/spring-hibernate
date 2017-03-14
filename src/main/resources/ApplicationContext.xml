@@ -69,8 +69,10 @@
 <!--提问表-->
     <bean class="com.kgc.dao.impl.ProblemDao" id="problemDao" autowire="byName"/>
     <bean class="com.kgc.service.impl.ProblemService" id="problemService" autowire="byName"/>
-
+<!--card-->
     <bean class="com.kgc.dao.impl.cardDao" id="cardDao" autowire="byName"></bean>
     <bean class="com.kgc.service.impl.cardService"  id="cardService" autowire="byName"></bean>
-
+<!--beauty-->
+    <bean class="com.kgc.dao.impl.BeautyDao" id="beautyDao" autowire="byName"></bean>
+    <bean class="com.kgc.service.impl.BeautyService" id="beautyService" autowire="byName"></bean>
 </beans>

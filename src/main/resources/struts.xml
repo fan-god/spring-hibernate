@@ -60,8 +60,13 @@
 
     <!--**************************咨询与解答模块******************************-->
     <package name="home" extends="struts-default">
+        <!--//点卡-->
         <action name="card" class="com.kgc.controller.CardAction" method="toCard">
              <result name="success">/page/home.jsp</result>
+        </action>
+        <!--//美女陪玩-->
+        <action name="beauty" class="com.kgc.controller.BeautyAction" >
+            <result name="success">/page/Beauty.jsp</result>
         </action>
         <action name="problem" class="com.kgc.controller.ProblemAction">
             <result name="success">/page/home.jsp</result>
