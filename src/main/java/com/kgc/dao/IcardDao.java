@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Created by 陈心航 on 2017/3/6.
+ * ss
  */
 public interface IcardDao extends IBaseDao<Card,Serializable> {
 

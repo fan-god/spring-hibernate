@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Created by 陈心航 on 2017/3/7.
- * ss
+ * sssss
  */
 public interface ICardService extends IBaseService<Card,Serializable> {
 //    public PageBean queryForPage(int pageSize, int currentPage);

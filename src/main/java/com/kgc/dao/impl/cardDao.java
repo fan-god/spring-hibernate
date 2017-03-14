@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  * Created by 陈心航 on 2017/3/7.
- * sss
+ * ssssss
  */
 public class cardDao extends BaseDao<Card,Serializable> implements IcardDao {
     private HibernateTemplate hibernateTemplate;

@@ -60,7 +60,7 @@
 
     <!--**************************咨询与解答模块******************************-->
     <package name="home" extends="struts-default">
-        <!--//点卡-->
+        <!--//11点卡-->
         <action name="card" class="com.kgc.controller.CardAction" method="toCard">
              <result name="success">/page/home.jsp</result>
         </action>
